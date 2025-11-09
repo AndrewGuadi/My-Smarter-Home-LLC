@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-col items-center text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Reviews</p>
+      <h1 class="mt-3 text-3xl font-bold text-slate-900">Neighbors trust My Smarter Home</h1>
+      <p class="mt-4 max-w-3xl text-sm text-slate-600">Filter testimonials by service type and city to see how we show up for urgent repairs and dream projects.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Electrical • York</p>
+        <p class="mt-3 text-sm text-slate-600">“Same-day panel repair got our home back online before dinner.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Glad we could restore power quickly, thanks for the trust!”</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Plumbing • Harrisburg</p>
+        <p class="mt-3 text-sm text-slate-600">“Leak stopped in under an hour, loved the photo updates and cleanup.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Appreciate the kind words—glad the floor stayed dry!”</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Remodel • Camp Hill</p>
+        <p class="mt-3 text-sm text-slate-600">“Design process was collaborative and the finishing details are flawless.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Enjoy your new spa bath, it was a pleasure!”</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+      <h2 class="text-xl font-semibold text-slate-900">Leave a review</h2>
+      <p class="mt-2 text-sm text-slate-600">Tell us how we did and we’ll feature your story on the site.</p>
+      <form class="mt-6 grid gap-4">
+        <input type="text" placeholder="Name" class="w-full rounded-full border border-slate-200 px-4 py-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500" />
+        <input type="text" placeholder="City" class="w-full rounded-full border border-slate-200 px-4 py-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500" />
+        <textarea rows="4" placeholder="Share your experience" class="w-full rounded-3xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500"></textarea>
+        <button type="button" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-e1 hover:bg-brand-700">Submit review</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-600 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <h2 class="text-2xl font-bold">Need references?</h2>
+    <p class="mt-2 text-sm text-brand-100">We’ll connect you with recent clients in your neighborhood.</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="{{ url_for('main.contact') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Request references</a>
+      <a href="{{ url_for('main.plan_project') }}" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/30">Start your project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
