@@ -1,0 +1,266 @@
+Pages that matter
+Primary nav
+Home
+
+
+Electrical Services
+
+
+Plumbing Services
+
+
+Bath and Remodel
+
+
+Projects
+
+
+Reviews
+
+
+Service Areas
+
+
+About
+
+
+Contact
+
+
+High-intent utilities
+Book Now (calendar)
+
+
+Get a Quote (3 step wizard)
+
+
+Financing or Payment Options
+
+
+FAQ
+
+
+Blog or Advice
+
+
+Two funnels to capture every visitor
+Urgent repair path
+ Entry points: “Fix It Now” button, sticky mobile dock.
+ Flow: pick problem category → brief checklist → upload photo → choose timeframe (today, 48 hours, next week) → show earliest slot → confirm by text.
+
+
+Planned project path
+ Entry points: service pages, “Plan My Project” buttons.
+ Flow: pick scope and budget range → style choices → address → calendar for in-home estimate → soft quote range on screen plus email.
+
+
+Core interactions and micro-UX
+Sticky mobile dock: Call, Text, Book, Quote. Visible on every page.
+
+
+3-step quote wizard: progressively disclosed fields, photo upload, city auto-detect, SMS verification, clear price ranges for common tasks.
+
+
+Service chooser: search box with typeahead for “panel upgrade,” “EV charger,” “leak under sink,” “shower remodel.”
+
+
+Before or after slider: on Projects and service pages. One slider above the fold.
+
+
+Process band: Diagnose, Quote, Fix with simple icons and one line each.
+
+
+Trust ribbon: HIC number, insured, payment types, “family owned.” Always visible near CTAs.
+
+
+Reviews carousel: filter by service type and city. Include owner replies.
+
+
+City smart content: auto-fills “serving York Haven and nearby” and surfaces the closest appointment window.
+
+
+Availability peek: shows the next three openings inline before the calendar modal.
+
+
+Inline FAQs: expanders tied to the service you are viewing.
+
+
+Exit micro-CTA: if a user moves to close, offer “Text us a photo of the issue” with a tap-to-text.
+
+
+Accessibility niceties: text size control, clear focus states, keyboard navigation, high contrast mode toggle.
+
+
+Performance delight: instant page transitions, lazy-loaded media, subtle fade and slide reveals only when in viewport.
+
+
+Page blueprints
+Home
+Hero: clear promise, 2 primary CTAs: Book Now and Get a Quote
+
+
+Trust ribbon: HIC number, insured, payment types
+
+
+Service index: Electrical, Plumbing, Bath or Remodel with mini cards
+
+
+“Pick your problem” chooser with icons
+
+
+Featured projects: 3 cards with before or after slider
+
+
+Process band: Diagnose, Quote, Fix
+
+
+Reviews slice
+
+
+Service areas map strip with top cities
+
+
+Final CTA bar plus sticky dock
+
+
+Electrical Services
+Targeted hero and trust cues
+
+
+Common jobs with transparent menu ranges: outlet or switch, light fixture swap, panel upgrade, EV charger
+
+
+Photo proof gallery
+
+
+Inline FAQs and safety note
+
+
+CTA group: Call, Book, Quote
+
+
+Plumbing Services
+Leaks, fixtures, water heaters, shutoff valves
+
+
+Mini decision helper: “Is the water off” yes or no to route urgency
+
+
+Photo upload and quote
+
+
+Bath and Remodel
+Tub to shower, custom shower, small bath refresh
+
+
+Budget tiers with inclusions, timeline, financing CTA
+
+
+3 project stories with outcomes and materials list
+
+
+Projects
+Filter by service and city
+
+
+Each project: brief story, 3 images, challenge or solution or outcome, testimonial if available
+
+
+Reviews
+Pull from Google once live
+
+
+Filters and owner responses
+
+
+Service Areas
+One page with sections per city: York Haven, York, Harrisburg, Mechanicsburg, etc
+
+
+Each section: short local intro, 3 common jobs, CTA
+
+
+About
+Owner photo and short bio, years in trade, family message, background check date, insurance proof
+
+
+Contact
+Tap-to-call, tap-to-text, booking calendar, short form, hours, service window notice
+
+
+Book Now
+Calendar with earliest slots and a “sooner please” waitlist toggle
+
+
+Confirmation by SMS and email
+
+
+Get a Quote
+3 steps: What happened, Where, When
+
+
+Upload photo or video
+
+
+Soft price range for quick tasks, schedule prompt for others
+
+
+Financing or Payment Options
+List accepted methods and any pay-over-time plan
+
+
+“Show me my options” mini form if financing is offered
+
+
+FAQ
+15 high-value answers. Include emergency policy, warranty, cleanup, parts, and scope limits
+
+
+Blog or Advice
+Short, useful posts: “GFCI keeps tripping,” “Panel upgrade costs in York County,” “Water heater size guide”
+
+
+Components and design system
+CTA styles: primary filled, secondary outline, tertiary text link
+
+
+Cards: e1 or e2 elevation with ring borders and gentle hover
+
+
+Typography: clear staircase for headings and body, tabular numerals for prices and times
+
+
+Color: warm, trustworthy neutrals with subtle accent for electric or water states
+
+
+Motion: small 150 to 250 ms transitions only on actionable elements
+
+
+Icons: simple line icons that match copy and are screen reader labeled
+
+
+Conversion hygiene
+Place phone and text CTAs before any scroll on every page
+
+
+Two step forms: capture name and phone first, then details
+
+
+Social proof near every big ask
+
+
+Clear price ranges on routine tasks, not on complex remodels
+
+
+Promise response time and meet it
+
+
+Technical essentials
+Fast server rendered pages, image compression, WebP, lazyload
+
+
+Schema: LocalBusiness, Service, AreaServed, FAQPage, Review, OfferCatalog
+
+
+GA4 with events for call click, text click, quote start, quote finish, booking confirmed
+
