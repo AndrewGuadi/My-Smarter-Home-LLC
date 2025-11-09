@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Financing &amp; Payment</p>
+    <h1 class="mt-3 text-3xl font-bold text-slate-900">Flexible ways to fund your project</h1>
+    <p class="mt-4 text-sm text-slate-600">Pick the plan that fits your budget—credit cards, financing partners, or staged project billing.</p>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 grid gap-6 md:grid-cols-3">
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1 text-center">
+      <h2 class="text-lg font-semibold text-slate-900">Pay as you go</h2>
+      <p class="mt-2 text-sm text-slate-600">Visa, Mastercard, Discover, ACH</p>
+      <p class="mt-4 text-xs text-slate-500">No extra fees</p>
+    </article>
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1 text-center">
+      <h2 class="text-lg font-semibold text-slate-900">GreenSky® Plans</h2>
+      <p class="mt-2 text-sm text-slate-600">12-month deferred interest or 60-month low payment options</p>
+      <p class="mt-4 text-xs text-slate-500">Subject to credit approval</p>
+    </article>
+    <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1 text-center">
+      <h2 class="text-lg font-semibold text-slate-900">Milestone billing</h2>
+      <p class="mt-2 text-sm text-slate-600">Deposits, progress draws, and final walkthrough sign-off</p>
+      <p class="mt-4 text-xs text-slate-500">Ideal for remodels</p>
+    </article>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 grid gap-10 md:grid-cols-2 md:items-center">
+    <div>
+      <h2 class="text-2xl font-bold text-slate-900">Financing checklist</h2>
+      <ul class="mt-4 space-y-3 text-sm text-slate-600">
+        <li>Soft credit pull to pre-qualify</li>
+        <li>Same-day approvals available</li>
+        <li>Paperless paperwork and e-signature</li>
+      </ul>
+    </div>
+    <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+           alt="Homeowner reviewing financing options on a tablet"
+           class="h-56 w-full rounded-2xl object-cover" />
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-600 text-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <h2 class="text-2xl font-bold">Need help picking a plan?</h2>
+    <p class="mt-2 text-sm text-brand-100">We’ll walk through monthly payments and promo terms with you.</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="{{ url_for('main.contact') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Talk to us</a>
+      <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/30">Start quote</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

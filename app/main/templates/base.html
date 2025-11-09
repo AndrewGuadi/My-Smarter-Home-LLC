@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}My Smarter Home Services · {{ page_title }}{% endblock %}</title>
+  <meta name="description" content="My Smarter Home Services provides electrical, plumbing, bath remodel, and smart home solutions across Central PA." />
+  <link rel="canonical" href="https://www.mysmarterhomepa.com/" />
+  <meta name="theme-color" content="#2563eb" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            },
+            warm: {
+              25:  '#fbfaf9',
+              50:  '#f7f5f3',
+              100: '#eeeae6',
+              200: '#dfd9d2',
+              700: '#4a4038',
+              800: '#3b342e'
+            }
+          },
+          boxShadow: {
+            'e1': '0 1px 2px rgb(0 0 0 / 0.06), 0 1px 1px rgb(0 0 0 / 0.04)',
+            'e2': '0 8px 24px rgb(0 0 0 / 0.10)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+    .sr-only-focusable:focus { position: static; width: auto; height: auto; padding: .5rem; margin: .5rem 0; clip: auto; }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-warm-50 text-slate-800 selection:bg-brand-200/60">
+  <a href="#main" class="sr-only sr-only-focusable">Skip to content</a>
+  <header id="siteHeader" class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200 transition-shadow">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="{{ url_for('main.home') }}" class="flex items-center gap-3" aria-label="My Smarter Home Services, LLC">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" class="fill-brand-600"></rect>
+            <path d="M12 30l6-12 6 12 6-12 6 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="leading-tight">
+            <p class="font-semibold tracking-tight">My Smarter Home</p>
+            <p class="text-xs text-slate-500">Electrical • Smart Home • Remodeling</p>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="{{ url_for('main.home') }}" class="hover:text-brand-700">Home</a>
+          <a href="{{ url_for('main.electrical_services') }}" class="hover:text-brand-700">Electrical</a>
+          <a href="{{ url_for('main.plumbing_services') }}" class="hover:text-brand-700">Plumbing</a>
+          <a href="{{ url_for('main.bath_remodel') }}" class="hover:text-brand-700">Bath & Remodel</a>
+          <a href="{{ url_for('main.projects') }}" class="hover:text-brand-700">Projects</a>
+          <a href="{{ url_for('main.reviews') }}" class="hover:text-brand-700">Reviews</a>
+          <a href="{{ url_for('main.contact') }}" class="hover:text-brand-700">Contact</a>
+          <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-white font-medium shadow-e1 hover:bg-brand-700">Schedule</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100" aria-label="Open menu" aria-expanded="false">
+          <svg class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 grid gap-2 text-sm">
+        <a href="{{ url_for('main.home') }}" class="py-2">Home</a>
+        <a href="{{ url_for('main.electrical_services') }}" class="py-2">Electrical</a>
+        <a href="{{ url_for('main.plumbing_services') }}" class="py-2">Plumbing</a>
+        <a href="{{ url_for('main.bath_remodel') }}" class="py-2">Bath & Remodel</a>
+        <a href="{{ url_for('main.projects') }}" class="py-2">Projects</a>
+        <a href="{{ url_for('main.reviews') }}" class="py-2">Reviews</a>
+        <a href="{{ url_for('main.contact') }}" class="py-2">Contact</a>
+        <a href="{{ url_for('main.book') }}" class="mt-2 inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-white font-medium shadow-e1 hover:bg-brand-700">Schedule Service</a>
+      </nav>
+    </div>
+  </header>
+  {% block hero %}{% endblock %}
+  <main id="main" class="pb-24">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid gap-8 md:grid-cols-4 text-sm text-slate-600">
+      <div>
+        <p class="font-semibold text-slate-900">My Smarter Home Services, LLC</p>
+        <p class="mt-2">Licensed • Insured • Family owned</p>
+        <p class="mt-2">Serving York Haven, Harrisburg, and Central PA.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-900">Visit</p>
+        <ul class="mt-2 space-y-1">
+          <li><a href="{{ url_for('main.home') }}" class="hover:text-brand-700">Home</a></li>
+          <li><a href="{{ url_for('main.service_areas') }}" class="hover:text-brand-700">Service Areas</a></li>
+          <li><a href="{{ url_for('main.about') }}" class="hover:text-brand-700">About</a></li>
+          <li><a href="{{ url_for('main.blog') }}" class="hover:text-brand-700">Advice</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-900">Get Help</p>
+        <ul class="mt-2 space-y-1">
+          <li><a href="{{ url_for('main.book') }}" class="hover:text-brand-700">Book Now</a></li>
+          <li><a href="{{ url_for('main.quote') }}" class="hover:text-brand-700">Get a Quote</a></li>
+          <li><a href="{{ url_for('main.urgent_repair') }}" class="hover:text-brand-700">Urgent Repair</a></li>
+          <li><a href="{{ url_for('main.plan_project') }}" class="hover:text-brand-700">Plan My Project</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-900">Contact</p>
+        <p class="mt-2">Call or text: <a href="tel:+17170000000" class="font-semibold text-brand-700">717-000-0000</a></p>
+        <p class="mt-2">Email: <a href="mailto:hello@mysmarterhomepa.com" class="text-brand-700">hello@mysmarterhomepa.com</a></p>
+        <div class="mt-4 flex gap-3">
+          <a href="{{ url_for('main.book') }}" class="inline-flex items-center rounded-md bg-brand-600 px-3 py-2 text-white text-xs font-medium shadow-e1 hover:bg-brand-700">Schedule</a>
+          <a href="{{ url_for('main.quote') }}" class="inline-flex items-center rounded-md border border-brand-600 px-3 py-2 text-brand-700 text-xs font-medium hover:bg-brand-50">Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-200 bg-warm-50 py-4 text-center text-xs text-slate-500">
+      <p>&copy; {{ 2024 }} My Smarter Home Services, LLC. All rights reserved.</p>
+    </div>
+  </footer>
+  <div class="fixed bottom-4 inset-x-4 z-50 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
+    <div class="flex w-full flex-col gap-2 rounded-2xl bg-white p-3 shadow-e2 ring-1 ring-slate-200 sm:flex-row sm:items-center sm:gap-3 sm:px-6">
+      <p class="text-sm font-semibold text-slate-700">Need help fast?</p>
+      <div class="flex flex-1 flex-wrap items-center gap-2 text-xs font-medium">
+        <a href="tel:+17170000000" class="inline-flex items-center gap-1 rounded-full bg-brand-600 px-3 py-2 text-white shadow-e1 hover:bg-brand-700">Call</a>
+        <a href="sms:+17170000000" class="inline-flex items-center gap-1 rounded-full border border-brand-600 px-3 py-2 text-brand-700 hover:bg-brand-50">Text</a>
+        <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-2 hover:bg-warm-50">Book</a>
+        <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-2 hover:bg-warm-50">Quote</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

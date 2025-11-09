@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Urgent Repair</p>
+    <h1 class="mt-3 text-3xl font-bold text-slate-900">Fix it now workflow</h1>
+    <p class="mt-4 text-sm text-slate-600">We route your request directly to dispatch for rapid scheduling and triage.</p>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 space-y-6">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+      <h2 class="text-lg font-semibold text-slate-900">1. Pick the problem</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 text-sm text-slate-600">
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 text-left font-semibold hover:border-brand-600">Power out</button>
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 text-left font-semibold hover:border-brand-600">Breaker keeps tripping</button>
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 text-left font-semibold hover:border-brand-600">Water leak</button>
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 text-left font-semibold hover:border-brand-600">No hot water</button>
+      </div>
+    </div>
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+      <h2 class="text-lg font-semibold text-slate-900">2. Quick checklist</h2>
+      <div class="mt-4 space-y-3 text-sm text-slate-600">
+        <label class="flex items-center gap-3"><input type="checkbox" class="h-4 w-4 rounded border-slate-300" /> Water or power shut off?</label>
+        <label class="flex items-center gap-3"><input type="checkbox" class="h-4 w-4 rounded border-slate-300" /> Any safety concerns right now?</label>
+        <label class="flex items-center gap-3"><input type="checkbox" class="h-4 w-4 rounded border-slate-300" /> Upload photo below</label>
+      </div>
+    </div>
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+      <h2 class="text-lg font-semibold text-slate-900">3. Choose timeframe</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-3 text-sm text-slate-600">
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 font-semibold hover:border-brand-600">Today</button>
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 font-semibold hover:border-brand-600">Within 48 hours</button>
+        <button class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3 font-semibold hover:border-brand-600">This week</button>
+      </div>
+      <button class="mt-6 inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-e1 hover:bg-brand-700">Hold my spot</button>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-600 text-white">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <h2 class="text-2xl font-bold">Need to talk to someone right away?</h2>
+    <p class="mt-2 text-sm text-brand-100">Call or text and mention “urgent” so we can fast-track your service call.</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="tel:+17170000000" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Call dispatch</a>
+      <a href="sms:+17170000000" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/30">Text dispatch</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

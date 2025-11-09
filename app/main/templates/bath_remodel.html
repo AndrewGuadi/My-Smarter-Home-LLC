@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">Bath &amp; Remodel</p>
+        <h1 class="mt-3 text-3xl font-bold text-slate-900">Design-led bath conversions with transparent budgets</h1>
+        <p class="mt-4 text-sm text-slate-600">Choose the finish level, materials, and timeline that fits. We coordinate every trade in-house for a clean install.</p>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <img src="https://images.unsplash.com/photo-1616627454073-8b9e740cd9d7?auto=format&fit=crop&w=1200&q=80"
+             alt="Spa-inspired bathroom with walk-in shower"
+             class="h-72 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs text-slate-500">Storyboard every remodel with material selections and milestone check-ins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <h2 class="text-2xl font-bold text-slate-900">Budget tiers</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <h3 class="text-xl font-semibold text-slate-900">Refresh</h3>
+        <p class="mt-2 text-sm text-slate-600">Keep layout, update fixtures, new paint and accessories.</p>
+        <p class="mt-3 text-xs font-medium text-slate-500">$8k – $15k • 1-2 weeks</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <h3 class="text-xl font-semibold text-slate-900">Conversion</h3>
+        <p class="mt-2 text-sm text-slate-600">Tub-to-shower with custom glass, tile, lighting, and ventilation.</p>
+        <p class="mt-3 text-xs font-medium text-slate-500">$18k – $32k • 3-4 weeks</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <h3 class="text-xl font-semibold text-slate-900">Signature</h3>
+        <p class="mt-2 text-sm text-slate-600">Reimagine layout, heated floors, smart controls, custom storage.</p>
+        <p class="mt-3 text-xs font-medium text-slate-500">$35k+ • 5-7 weeks</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-10 lg:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <h3 class="text-lg font-semibold text-slate-900">Story 1: Tub to Spa Shower</h3>
+        <p class="mt-2 text-sm text-slate-600">Removed corner tub, installed walk-in shower with teak bench and dual niches.</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-xs text-slate-500">
+          <li>Materials: Porcelain tile, frameless glass, matte black fixtures</li>
+          <li>Timeline: 4 weeks</li>
+          <li>Outcome: Added storage and increased home value</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <h3 class="text-lg font-semibold text-slate-900">Story 2: Small Bath Refresh</h3>
+        <p class="mt-2 text-sm text-slate-600">Brightened a hall bath with new vanity, lighting, and waterproof flooring.</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-xs text-slate-500">
+          <li>Materials: Quartz top, LED mirror, luxury vinyl plank</li>
+          <li>Timeline: 9 days</li>
+          <li>Outcome: More counter space and storage</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <h3 class="text-lg font-semibold text-slate-900">Story 3: Accessible Suite</h3>
+        <p class="mt-2 text-sm text-slate-600">Converted ensuite with curbless shower, grab bars, and smart lighting scenes.</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-xs text-slate-500">
+          <li>Materials: Slip-resistant tile, handheld shower, smart dimmers</li>
+          <li>Timeline: 5 weeks</li>
+          <li>Outcome: Aging-in-place ready</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-600 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h2 class="text-2xl font-bold">Bring your vision to life</h2>
+      <p class="mt-2 text-sm text-brand-100">Schedule an in-home design consult and receive a detailed scope with pricing tiers.</p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <a href="{{ url_for('main.plan_project') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Plan my project</a>
+      <a href="{{ url_for('main.financing') }}" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/30">Explore financing</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "My Smarter Home Services, LLC",
+  "url": "https://www.mysmarterhomepa.com/",
+  "image": [
+    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
+    "https://images.unsplash.com/photo-1505692952045-1d6dfc6e43a6?auto=format&fit=crop&w=900&q=80"
+  ],
+  "telephone": "+1-717-000-0000",
+  "priceRange": "$$",
+  "areaServed": [
+    "York Haven PA","York PA","Harrisburg PA","Mechanicsburg PA",
+    "Middletown PA","Manchester PA","Dover PA","New Cumberland PA","Camp Hill PA"
+  ],
+  "sameAs": [],
+  "knowsAbout": [
+    "electrical repair","panel upgrade","lighting installation","ceiling fan installation",
+    "EV charger install","leak repair","fixture replacement","water heater replacement",
+    "bathroom remodel","tub to shower conversion","smart thermostat","smart dimmers","surge protection"
+  ]
+}
+</script>
+{% endblock %}
+
+{% block hero %}
+<section class="relative">
+  <div class="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <figure class="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80"
+             alt="Technician configuring a smart thermostat in a hallway"
+             class="h-full w-full object-cover" />
+        <div class="absolute left-4 bottom-4 bg-white/90 backdrop-blur rounded-md shadow-e2 p-3 border border-slate-200">
+          <p class="text-xs font-medium text-slate-700">Licensed and Insured</p>
+          <p class="text-[11px] text-slate-500">HIC #000000 · Background checked</p>
+        </div>
+      </figure>
+      <figure class="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
+             alt="Family relaxing in a living room with warm lighting"
+             class="h-full w-full object-cover" />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-transparent"></div>
+      </figure>
+    </div>
+  </div>
+  <div class="bg-white border-y border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="text-sm tracking-widest text-brand-700 font-semibold">YOUR LOCAL EXPERTS, POWERING PA HOMES</p>
+        <h1 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+          Reliable Electrical, Plumbing, and Smart Home Solutions
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Book urgent fixes today or plan your next project with a family-owned team focused on craftsmanship, safety, and smart upgrades.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-white font-semibold shadow-e1 hover:bg-brand-700">
+            Fix It Now
+          </a>
+          <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-2 rounded-full border border-brand-600 px-5 py-3 text-brand-700 font-semibold hover:bg-brand-50">
+            Plan My Project
+          </a>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
+            <p class="text-sm font-semibold text-slate-700">Same-day diagnostics</p>
+            <p class="mt-1 text-xs text-slate-500">Electrical + plumbing emergencies</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
+            <p class="text-sm font-semibold text-slate-700">Upfront pricing menus</p>
+            <p class="mt-1 text-xs text-slate-500">Know the ranges before we roll</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
+            <p class="text-sm font-semibold text-slate-700">Smart home experts</p>
+            <p class="mt-1 text-xs text-slate-500">Tailored automations &amp; EV charging</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">TRUSTED + VERIFIED</p>
+        <h2 class="mt-2 text-2xl font-bold text-slate-900">HIC #000000 • Insured • Financing Available</h2>
+      </div>
+      <div class="flex flex-wrap gap-3 text-xs text-slate-600">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">Visa • Mastercard</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">GreenSky Financing</span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">York Haven Chamber Member</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="bg-warm-25 border-b border-slate-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">SERVICES</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-900">Everyday fixes to full renovations</h2>
+        <p class="mt-3 text-sm text-slate-600">Tap into licensed electricians, plumbers, and remodelers that coordinate under one roof.</p>
+      </div>
+      <a href="{{ url_for('main.plan_project') }}" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white">View all service menus</a>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+               alt="Electrician installing a smart breaker panel"
+               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-5 text-xl font-semibold text-slate-900">Electrical Services</h3>
+        <p class="mt-2 text-sm text-slate-600">Panel upgrades, lighting design, EV chargers, and whole-home protection.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+          <span class="rounded-full bg-warm-50 px-3 py-1">Panel upgrades</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Lighting &amp; fans</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Smart switches</span>
+        </div>
+        <a href="{{ url_for('main.electrical_services') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore electrical →</a>
+      </article>
+      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1597006391610-3f7e4a8932e4?auto=format&fit=crop&w=1200&q=80"
+               alt="Plumber tightening a pipe beneath a sink"
+               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-5 text-xl font-semibold text-slate-900">Plumbing Services</h3>
+        <p class="mt-2 text-sm text-slate-600">From leak detection to water heaters with rapid response when water is on the floor.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+          <span class="rounded-full bg-warm-50 px-3 py-1">Emergency shutoffs</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Fixture installs</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Water heaters</span>
+        </div>
+        <a href="{{ url_for('main.plumbing_services') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore plumbing →</a>
+      </article>
+      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1616628182504-9fb17f2b87d0?auto=format&fit=crop&w=1200&q=80"
+               alt="Modern bathroom remodel with glass shower and warm tile"
+               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-5 text-xl font-semibold text-slate-900">Bath &amp; Remodel</h3>
+        <p class="mt-2 text-sm text-slate-600">Tub-to-shower conversions, small bath refreshes, and complete smart lighting layouts.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+          <span class="rounded-full bg-warm-50 px-3 py-1">Design-build</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Material guidance</span>
+          <span class="rounded-full bg-warm-50 px-3 py-1">Financing ready</span>
+        </div>
+        <a href="{{ url_for('main.bath_remodel') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore remodels →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="smart" class="bg-white border-b border-slate-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">PICK YOUR PROBLEM</p>
+        <h2 class="mt-3 text-3xl font-bold text-slate-900">Tell us what needs attention</h2>
+        <p class="mt-4 text-sm text-slate-600">Search by keyword or tap a service tile to route directly to a specialist. Photos help us arrive prepared.</p>
+        <form class="mt-6 rounded-3xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
+          <label for="serviceSearch" class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Search services</label>
+          <div class="mt-3 flex flex-col gap-3 sm:flex-row">
+            <input id="serviceSearch" type="text" placeholder="Panel upgrade, EV charger, leak under sink" class="w-full rounded-full border border-slate-200 px-4 py-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500" />
+            <button type="button" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-e1 hover:bg-brand-700">Find availability</button>
+          </div>
+        </form>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Power out</button>
+          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Breaker upgrade</button>
+          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Water leak</button>
+          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Bathroom refresh</button>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+          <p class="text-sm font-semibold text-slate-700">Availability Peek</p>
+          <p class="mt-2 text-xs text-slate-500">Next openings: Today 3:30 PM • Tomorrow 8:00 AM • Wed 1:00 PM</p>
+          <a href="{{ url_for('main.book') }}" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">See calendar →</a>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+          <p class="text-sm font-semibold text-slate-700">Sticky Dock Actions</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+            <span class="rounded-full bg-warm-50 px-3 py-1">Call</span>
+            <span class="rounded-full bg-warm-50 px-3 py-1">Text</span>
+            <span class="rounded-full bg-warm-50 px-3 py-1">Book</span>
+            <span class="rounded-full bg-warm-50 px-3 py-1">Quote</span>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Always on-screen so you can reach us the moment you decide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-col items-center text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">FEATURED PROJECTS</p>
+      <h2 class="mt-3 text-3xl font-bold text-slate-900">Recent before &amp; after transformations</h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">York Haven • Panel Upgrade</p>
+        <div class="mt-4 relative overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
+               alt="Before electrical panel"
+               class="h-48 w-full object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Drag to compare</span>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-slate-500">New 200A panel, whole-home surge, labeled circuits.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Camp Hill • Bathroom Refresh</p>
+        <div class="mt-4 relative overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+               alt="Bathroom renovation"
+               class="h-48 w-full object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Before / After</span>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-slate-500">Custom tile, frameless glass, heated floors.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Mechanicsburg • Smart Lighting</p>
+        <div class="mt-4 relative overflow-hidden rounded-2xl">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80"
+               alt="Smart lighting installation"
+               class="h-48 w-full object-cover" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Smart Scenes</span>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-slate-500">Layered lighting scenes with app + voice control.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">OUR PROCESS</p>
+        <h2 class="mt-3 text-3xl font-bold text-slate-900">Diagnose. Quote. Fix.</h2>
+        <p class="mt-4 text-sm text-slate-600">Simple, transparent steps that respect your time and budget.</p>
+        <ul class="mt-6 space-y-4">
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">1</span>
+            <div>
+              <p class="font-semibold text-slate-800">Diagnose</p>
+              <p class="text-sm text-slate-600">Virtual triage + onsite diagnostics with licensed techs.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">2</span>
+            <div>
+              <p class="font-semibold text-slate-800">Quote</p>
+              <p class="text-sm text-slate-600">Upfront packages, financing options, and clear ranges.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">3</span>
+            <div>
+              <p class="font-semibold text-slate-800">Fix</p>
+              <p class="text-sm text-slate-600">Craftsmanship, clean workspace, and walkthrough sign-off.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+             alt="Technician reviewing a project plan with a homeowner"
+             class="h-64 w-full rounded-2xl object-cover" />
+        <div class="mt-5 space-y-3 text-sm text-slate-600">
+          <p><span class="font-semibold text-slate-800">Trust ribbon:</span> HIC #000000 • Insured • Financing • Family owned</p>
+          <p><span class="font-semibold text-slate-800">City smart content:</span> Serving York Haven and nearby. Next appointment: Tomorrow 8 AM.</p>
+          <p><span class="font-semibold text-slate-800">Exit micro-CTA:</span> Text us a photo of the issue for instant triage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="border-b border-slate-200 bg-warm-25">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-col items-center text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">REVIEWS</p>
+      <h2 class="mt-3 text-3xl font-bold text-slate-900">What neighbors are saying</h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Danielle R. • York</p>
+        <p class="mt-3 text-sm text-slate-600">“They squeezed us in same-day when our panel tripped. Clear pricing and spotless work.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Glad we could restore power fast, Danielle!”</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Marcus T. • Harrisburg</p>
+        <p class="mt-3 text-sm text-slate-600">“Water heater swap was seamless. Loved the text updates and financing options.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Enjoy that hot water, Marcus. Thanks for trusting us!”</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
+        <p class="text-sm font-semibold text-slate-700">Lena S. • Camp Hill</p>
+        <p class="mt-3 text-sm text-slate-600">“Bathroom refresh looks incredible. Smart lighting scenes are a game changer.”</p>
+        <p class="mt-4 text-xs text-slate-500">Owner reply: “Thank you, Lena! Loved delivering the warm spa vibe.”</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="serviceAreas" class="border-b border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">SERVICE AREAS</p>
+        <h2 class="mt-3 text-3xl font-bold text-slate-900">Serving Central PA every day</h2>
+        <p class="mt-4 text-sm text-slate-600">Local techs who know the neighborhoods, codes, and permit offices.</p>
+        <ul class="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">York Haven</li>
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Harrisburg</li>
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Mechanicsburg</li>
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Camp Hill</li>
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">York</li>
+          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Middletown</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
+        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80"
+             alt="Map marker on Central Pennsylvania"
+             class="h-72 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs text-slate-500">Auto-detects your city to show the closest appointment window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-600 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
+    <div>
+      <h2 class="text-2xl font-bold">Ready when you are.</h2>
+      <p class="mt-2 text-sm text-brand-100">Book urgent repairs, request a project quote, or text us a photo of the issue.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Book Now</a>
+      <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/40">Get a Quote</a>
+      <a href="sms:+17170000000" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/40">Text a Photo</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

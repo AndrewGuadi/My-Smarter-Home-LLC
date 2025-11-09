@@ -1,0 +1,2 @@
+This directory contains database migration scripts managed by Flask-Migrate (Alembic).
+To create new migrations run `flask db migrate` after exporting the FLASK_APP variable.
