@@ -8,8 +8,8 @@
   "name": "My Smarter Home Services, LLC",
   "url": "https://www.mysmarterhomepa.com/",
   "image": [
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1505692952045-1d6dfc6e43a6?auto=format&fit=crop&w=900&q=80"
+    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
   ],
   "telephone": "+1-717-000-0000",
   "priceRange": "$$",
@@ -22,25 +22,81 @@
     "electrical repair","panel upgrade","lighting installation","ceiling fan installation",
     "EV charger install","leak repair","fixture replacement","water heater replacement",
     "bathroom remodel","tub to shower conversion","smart thermostat","smart dimmers","surge protection"
-  ]
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Home Services",
+    "itemListElement": [
+      {"@type":"OfferCatalog","name":"Electrical","itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Panel upgrade"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lighting and fans"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Outlets and switches"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"EV charger install"}}
+      ]},
+      {"@type":"OfferCatalog","name":"Plumbing","itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Leak repair"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fixture replacement"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Water heater replacement"}}
+      ]},
+      {"@type":"OfferCatalog","name":"Bath and Remodel","itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tub to shower conversion"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom shower"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Small bath refresh"}}
+      ]},
+      {"@type":"OfferCatalog","name":"Smart Home","itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Smart thermostat setup"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Smart dimmers and scenes"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Whole home surge protection"}}
+      ]}
+    ]
+  }
 }
 </script>
+<style>
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1rem;box-shadow:var(--e1,0 1px 2px rgba(0,0,0,.06));text-align:left}
+  .card-title{font-weight:600}
+  .card-body{font-size:.9rem;color:#475569;margin-top:.25rem}
+  .card-cta{display:inline-block;margin-top:.5rem;font-size:.85rem;color:#2563eb}
+  .svc-card{background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;padding:1rem;box-shadow:var(--e1,0 1px 2px rgba(0,0,0,.06))}
+  .svc-title{font-weight:600}
+  .svc-body{font-size:.92rem;color:#475569;margin-top:.35rem}
+  .svc-cta{margin-top:.6rem;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:1px solid #cbd5e1;border-radius:.5rem;background:#fff;padding:.5rem .9rem;font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .svc-cta:hover{background:#f8fafc}
+  .btn-chip{border:1px solid #cbd5e1;border-radius:.5rem;padding:.35rem .6rem;background:#fff}
+  .btn-chip.active{background:#eff6ff;border-color:#93c5fd}
+  .rem-card{border:1px solid #e2e8f0;border-radius:.75rem;background:#fff;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .rem-img{width:100%;height:220px;object-fit:cover}
+  .proj-card{border:1px solid #e2e8f0;border-radius:.75rem;background:#fff;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .ba-label{position:absolute;top:.5rem;left:.5rem;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;padding:.2rem .35rem;border-radius:.25rem}
+  .ba-label.right{left:auto;right:.5rem}
+  .btn-link{color:#2563eb;font-size:.85rem}
+  .rev-card{border:1px solid #e2e8f0;border-radius:.75rem;background:#fff;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .rev-body{color:#334155}
+  .rev-meta{font-size:.8rem;color:#64748b;margin-top:.4rem}
+  .rev-owner{font-size:.8rem;color:#1e40af;margin-top:.3rem;border-left:3px solid #bfdbfe;padding-left:.5rem}
+  .filter-chip,.city-chip{border:1px solid #cbd5e1;border-radius:.5rem;padding:.35rem .6rem;background:#fff}
+  .filter-chip.active,.city-chip.active{background:#eff6ff;border-color:#93c5fd}
+  .area-card{border:1px solid #e2e8f0;border-radius:.75rem;background:#fff;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .faq-btn{width:100%;text-align:left;border:1px solid #e2e8f0;border-radius:.5rem;background:#fff;padding:.75rem .9rem;font-weight:600}
+  .faq-btn.open{border-color:#93c5fd;background:#eff6ff}
+  .faq-panel{border-left:3px solid #bfdbfe;background:#fff;padding:.75rem .9rem;border-radius:.25rem}
+</style>
 {% endblock %}
 
 {% block hero %}
 <section class="relative">
   <div class="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <figure class="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+    <div class="grid grid-cols-1 gap-0 md:grid-cols-2">
+      <figure class="relative aspect-[16/10] overflow-hidden md:aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80"
-             alt="Technician configuring a smart thermostat in a hallway"
+             alt="Technician configuring a smart thermostat near an electrical panel"
              class="h-full w-full object-cover" />
-        <div class="absolute left-4 bottom-4 bg-white/90 backdrop-blur rounded-md shadow-e2 p-3 border border-slate-200">
+        <div class="absolute bottom-4 left-4 rounded-md border border-slate-200 bg-white/90 p-3 shadow-e2 backdrop-blur">
           <p class="text-xs font-medium text-slate-700">Licensed and Insured</p>
           <p class="text-[11px] text-slate-500">HIC #000000 · Background checked</p>
         </div>
       </figure>
-      <figure class="relative aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+      <figure class="relative aspect-[16/10] overflow-hidden md:aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
              alt="Family relaxing in a living room with warm lighting"
              class="h-full w-full object-cover" />
@@ -48,318 +104,914 @@
       </figure>
     </div>
   </div>
-  <div class="bg-white border-y border-slate-200">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+  <div class="border-y border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <p class="text-sm tracking-widest text-brand-700 font-semibold">YOUR LOCAL EXPERTS, POWERING PA HOMES</p>
-        <h1 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-          Reliable Electrical, Plumbing, and Smart Home Solutions
-        </h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-600">
-          Book urgent fixes today or plan your next project with a family-owned team focused on craftsmanship, safety, and smart upgrades.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-white font-semibold shadow-e1 hover:bg-brand-700">
-            Fix It Now
-          </a>
-          <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-2 rounded-full border border-brand-600 px-5 py-3 text-brand-700 font-semibold hover:bg-brand-50">
-            Plan My Project
+        <p class="text-sm font-semibold tracking-[0.3em] text-brand-700">YOUR LOCAL EXPERTS, POWERING PA HOMES</p>
+        <h1 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Reliable Electrical and Smart Home Solutions</h1>
+        <p class="mt-4 text-base text-slate-600 sm:text-lg">My Smarter Home Services, LLC keeps York Haven and Central PA running with trust, craftsmanship, and technology-forward service.</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 text-sm shadow-e1">
+            <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+            Family Owned
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 text-sm shadow-e1">
+            <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+            On-Time Scheduling
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 text-sm shadow-e1">
+            <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+            5.0 Rated Service
+          </span>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <button type="button" id="openBookingHero" class="inline-flex items-center gap-2 rounded-md bg-brand-600 px-6 py-3 text-white font-semibold shadow-e2 hover:bg-brand-700">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7h8M8 11h8M8 15h5M6 3v2m12-2v2M5 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" stroke="white" stroke-linecap="round" stroke-width="1.8"></path></svg>
+            Schedule Service
+          </button>
+          <a href="sms:+17170000000?body=Hi%20My%20Smarter%20Home%2C%20I%27d%20like%20to%20send%20a%20photo%20of%20an%20issue." class="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold shadow-e1 hover:bg-slate-50">
+            <svg class="h-5 w-5 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg>
+            Text Us a Photo
           </a>
         </div>
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
-            <p class="text-sm font-semibold text-slate-700">Same-day diagnostics</p>
-            <p class="mt-1 text-xs text-slate-500">Electrical + plumbing emergencies</p>
+        <div class="mt-10 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
+          <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white p-3 shadow-e1">
+            <span class="h-2.5 w-2.5 rounded-full bg-brand-600"></span> Panel Upgrades
           </div>
-          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
-            <p class="text-sm font-semibold text-slate-700">Upfront pricing menus</p>
-            <p class="mt-1 text-xs text-slate-500">Know the ranges before we roll</p>
+          <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white p-3 shadow-e1">
+            <span class="h-2.5 w-2.5 rounded-full bg-brand-600"></span> Outlets &amp; Switches
           </div>
-          <div class="rounded-xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
-            <p class="text-sm font-semibold text-slate-700">Smart home experts</p>
-            <p class="mt-1 text-xs text-slate-500">Tailored automations &amp; EV charging</p>
+          <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white p-3 shadow-e1">
+            <span class="h-2.5 w-2.5 rounded-full bg-brand-600"></span> Lighting &amp; Fans
+          </div>
+          <div class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white p-3 shadow-e1">
+            <span class="h-2.5 w-2.5 rounded-full bg-brand-600"></span> EV Chargers
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<section id="smart" class="sr-only">Smart Home</section>
+<section id="reviews" class="sr-only">Testimonials</section>
+<section id="contact" class="sr-only">Contact</section>
+
+<div id="bookingModal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+  <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+  <div class="relative mx-auto my-10 w-[92%] max-w-xl rounded-xl bg-white shadow-e2">
+    <div class="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+      <h2 id="bookingTitle" class="text-lg font-semibold">Schedule Service</h2>
+      <button type="button" id="closeBooking" class="rounded-md p-2 hover:bg-slate-100" aria-label="Close">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+      </button>
+    </div>
+    <form class="grid gap-4 px-5 py-5" onsubmit="event.preventDefault(); handleBookingSubmit();">
+      <div class="grid gap-2">
+        <label for="svc" class="text-sm font-medium">Service</label>
+        <select id="svc" class="w-full rounded-md border-slate-300 focus:border-brand-600 focus:ring-brand-600">
+          <option>Electrical repair</option>
+          <option>Panel upgrade</option>
+          <option>Lighting install</option>
+          <option>EV charger</option>
+          <option>Plumbing repair</option>
+          <option>Shower remodel</option>
+        </select>
+      </div>
+      <div class="grid gap-2">
+        <span class="text-sm font-medium">Preferred time</span>
+        <div class="flex flex-wrap gap-2" id="when">
+          <label class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+            <input type="radio" name="slot" value="Today" class="accent-brand-600" /> Today
+          </label>
+          <label class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+            <input type="radio" name="slot" value="48 hours" class="accent-brand-600" /> 48 hours
+          </label>
+          <label class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-slate-300 px-3 py-2">
+            <input type="radio" name="slot" value="Next week" class="accent-brand-600" /> Next week
+          </label>
+        </div>
+      </div>
+      <div class="grid gap-2">
+        <label for="photo" class="text-sm font-medium">Add a photo or video (optional)</label>
+        <input id="photo" type="file" accept="image/*,video/*" class="block w-full text-sm text-slate-600 file:mr-3 file:rounded-md file:border-0 file:bg-brand-600 file:px-4 file:py-2 file:text-white hover:file:bg-brand-700" />
+      </div>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div class="grid gap-2">
+          <label for="name" class="text-sm font-medium">Name</label>
+          <input id="name" required class="w-full rounded-md border-slate-300 focus:border-brand-600 focus:ring-brand-600" />
+        </div>
+        <div class="grid gap-2">
+          <label for="phone" class="text-sm font-medium">Phone</label>
+          <input id="phone" type="tel" required class="w-full rounded-md border-slate-300 focus:border-brand-600 focus:ring-brand-600" />
+        </div>
+      </div>
+      <div class="grid gap-2">
+        <label for="addr" class="text-sm font-medium">City or ZIP</label>
+        <input id="addr" class="w-full rounded-md border-slate-300 focus:border-brand-600 focus:ring-brand-600" placeholder="York Haven, 17370" />
+      </div>
+      <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-slate-500">By submitting, you agree to be contacted about your service request.</p>
+        <button type="submit" class="inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-white font-semibold hover:bg-brand-700">
+          Confirm
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
-<section class="border-b border-slate-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-    <div class="flex flex-wrap items-center justify-between gap-4">
+<section id="credentials" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+      <button type="button" class="badge" data-tooltip="Active general liability policy on file. Ask for proof of insurance any time.">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 shadow-e1">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+          Licensed and Insured
+        </span>
+      </button>
+      <button type="button" class="badge" data-tooltip="Pennsylvania Home Improvement Consumer Protection Act registration number. Shown on estimates and invoices.">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 shadow-e1">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4v6c0 5-8 8-8 8s-8-3-8-8V7l8-4z" stroke="currentColor" stroke-width="2"></path></svg>
+          HIC #000000
+        </span>
+      </button>
+      <button type="button" class="badge" data-tooltip="Technicians complete background checks. Professional conduct and clean-home policy.">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 shadow-e1">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+          Background Checked
+        </span>
+      </button>
+      <button type="button" class="badge" data-tooltip="Cards and common digital wallets accepted. Milestone billing available for larger projects.">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 shadow-e1">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7h18v10H3z M3 10h18" stroke="currentColor" stroke-width="2"></path></svg>
+          Easy Payments
+        </span>
+      </button>
+      <button type="button" class="badge" data-tooltip="Local company with roots in Central Pennsylvania.">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-warm-25 px-3 py-1 shadow-e1">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+          Family Owned
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="quote-starter" class="bg-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8 mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Pick the issue that sounds closest to what you are seeing</h2>
+      <p class="mt-2 text-slate-600">Start a fast quote, upload a photo if helpful, and choose a time that works. We confirm by text and arrive with the right parts.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <button type="button" class="issue-card" data-service="Electrical repair" data-note="Breaker keeps tripping">
+        <div class="card">
+          <h3 class="card-title">Breaker keeps tripping</h3>
+          <p class="card-body">We isolate the fault, correct the cause, and verify safe operation so you can use power without worry.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+      <button type="button" class="issue-card" data-service="Electrical repair" data-note="Outlet or switch">
+        <div class="card">
+          <h3 class="card-title">Outlet or switch stopped working</h3>
+          <p class="card-body">We replace worn devices, fix loose terminations, and add protection where it improves safety.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+      <button type="button" class="issue-card" data-service="Lighting install" data-note="Lighting or fans">
+        <div class="card">
+          <h3 class="card-title">Lighting or fan upgrade</h3>
+          <p class="card-body">Low glare recessed lights, quiet fans with proper bracing, and smart controls that feel natural.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+      <button type="button" class="issue-card" data-service="Panel upgrade" data-note="Panel or new circuits">
+        <div class="card">
+          <h3 class="card-title">Panel upgrade or new circuits</h3>
+          <p class="card-body">We evaluate load and grounding, add capacity, and label clearly for easy use.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+      <button type="button" class="issue-card" data-service="EV charger" data-note="EV charger install">
+        <div class="card">
+          <h3 class="card-title">EV charger installation</h3>
+          <p class="card-body">Dedicated circuit, neat mount, labeled disconnect when required, and help setting schedules.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+      <button type="button" class="issue-card" data-service="Plumbing repair" data-note="Leak or fixture">
+        <div class="card">
+          <h3 class="card-title">Leak under sink or fixture swap</h3>
+          <p class="card-body">We stop the leak, replace the failed part, and test under pressure before we leave.</p>
+          <span class="card-cta">Start quote</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="electrical-services" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-3">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">TRUSTED + VERIFIED</p>
-        <h2 class="mt-2 text-2xl font-bold text-slate-900">HIC #000000 • Insured • Financing Available</h2>
-      </div>
-      <div class="flex flex-wrap gap-3 text-xs text-slate-600">
-        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">Visa • Mastercard</span>
-        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">GreenSky Financing</span>
-        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1">York Haven Chamber Member</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="bg-warm-25 border-b border-slate-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <div class="max-w-2xl">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">SERVICES</p>
-        <h2 class="mt-2 text-3xl font-bold text-slate-900">Everyday fixes to full renovations</h2>
-        <p class="mt-3 text-sm text-slate-600">Tap into licensed electricians, plumbers, and remodelers that coordinate under one roof.</p>
-      </div>
-      <a href="{{ url_for('main.plan_project') }}" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-white">View all service menus</a>
-    </div>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-               alt="Electrician installing a smart breaker panel"
-               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <h3 class="mt-5 text-xl font-semibold text-slate-900">Electrical Services</h3>
-        <p class="mt-2 text-sm text-slate-600">Panel upgrades, lighting design, EV chargers, and whole-home protection.</p>
-        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
-          <span class="rounded-full bg-warm-50 px-3 py-1">Panel upgrades</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Lighting &amp; fans</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Smart switches</span>
-        </div>
-        <a href="{{ url_for('main.electrical_services') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore electrical →</a>
-      </article>
-      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1597006391610-3f7e4a8932e4?auto=format&fit=crop&w=1200&q=80"
-               alt="Plumber tightening a pipe beneath a sink"
-               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <h3 class="mt-5 text-xl font-semibold text-slate-900">Plumbing Services</h3>
-        <p class="mt-2 text-sm text-slate-600">From leak detection to water heaters with rapid response when water is on the floor.</p>
-        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
-          <span class="rounded-full bg-warm-50 px-3 py-1">Emergency shutoffs</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Fixture installs</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Water heaters</span>
-        </div>
-        <a href="{{ url_for('main.plumbing_services') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore plumbing →</a>
-      </article>
-      <article class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <div class="aspect-[4/3] overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1616628182504-9fb17f2b87d0?auto=format&fit=crop&w=1200&q=80"
-               alt="Modern bathroom remodel with glass shower and warm tile"
-               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <h3 class="mt-5 text-xl font-semibold text-slate-900">Bath &amp; Remodel</h3>
-        <p class="mt-2 text-sm text-slate-600">Tub-to-shower conversions, small bath refreshes, and complete smart lighting layouts.</p>
-        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
-          <span class="rounded-full bg-warm-50 px-3 py-1">Design-build</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Material guidance</span>
-          <span class="rounded-full bg-warm-50 px-3 py-1">Financing ready</span>
-        </div>
-        <a href="{{ url_for('main.bath_remodel') }}" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">Explore remodels →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="smart" class="bg-white border-b border-slate-200">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">PICK YOUR PROBLEM</p>
-        <h2 class="mt-3 text-3xl font-bold text-slate-900">Tell us what needs attention</h2>
-        <p class="mt-4 text-sm text-slate-600">Search by keyword or tap a service tile to route directly to a specialist. Photos help us arrive prepared.</p>
-        <form class="mt-6 rounded-3xl border border-slate-200 bg-warm-25 p-4 shadow-e1">
-          <label for="serviceSearch" class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Search services</label>
-          <div class="mt-3 flex flex-col gap-3 sm:flex-row">
-            <input id="serviceSearch" type="text" placeholder="Panel upgrade, EV charger, leak under sink" class="w-full rounded-full border border-slate-200 px-4 py-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500" />
-            <button type="button" class="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-e1 hover:bg-brand-700">Find availability</button>
-          </div>
-        </form>
-        <div class="mt-6 grid gap-3 sm:grid-cols-2">
-          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Power out</button>
-          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Breaker upgrade</button>
-          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Water leak</button>
-          <button class="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left text-sm font-semibold text-slate-700 shadow-e1 hover:border-brand-600">Bathroom refresh</button>
-        </div>
-      </div>
-      <div class="space-y-6">
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-          <p class="text-sm font-semibold text-slate-700">Availability Peek</p>
-          <p class="mt-2 text-xs text-slate-500">Next openings: Today 3:30 PM • Tomorrow 8:00 AM • Wed 1:00 PM</p>
-          <a href="{{ url_for('main.book') }}" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">See calendar →</a>
-        </div>
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-          <p class="text-sm font-semibold text-slate-700">Sticky Dock Actions</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
-            <span class="rounded-full bg-warm-50 px-3 py-1">Call</span>
-            <span class="rounded-full bg-warm-50 px-3 py-1">Text</span>
-            <span class="rounded-full bg-warm-50 px-3 py-1">Book</span>
-            <span class="rounded-full bg-warm-50 px-3 py-1">Quote</span>
-          </div>
-          <p class="mt-3 text-xs text-slate-500">Always on-screen so you can reach us the moment you decide.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="border-b border-slate-200 bg-warm-25">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="flex flex-col items-center text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">FEATURED PROJECTS</p>
-      <h2 class="mt-3 text-3xl font-bold text-slate-900">Recent before &amp; after transformations</h2>
-    </div>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">York Haven • Panel Upgrade</p>
-        <div class="mt-4 relative overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
-               alt="Before electrical panel"
-               class="h-48 w-full object-cover" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Drag to compare</span>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">New 200A panel, whole-home surge, labeled circuits.</p>
-      </article>
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">Camp Hill • Bathroom Refresh</p>
-        <div class="mt-4 relative overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-               alt="Bathroom renovation"
-               class="h-48 w-full object-cover" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Before / After</span>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Custom tile, frameless glass, heated floors.</p>
-      </article>
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">Mechanicsburg • Smart Lighting</p>
-        <div class="mt-4 relative overflow-hidden rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80"
-               alt="Smart lighting installation"
-               class="h-48 w-full object-cover" />
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="rounded-full bg-brand-600 px-3 py-1 text-xs font-medium text-white">Smart Scenes</span>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Layered lighting scenes with app + voice control.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="border-b border-slate-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">OUR PROCESS</p>
-        <h2 class="mt-3 text-3xl font-bold text-slate-900">Diagnose. Quote. Fix.</h2>
-        <p class="mt-4 text-sm text-slate-600">Simple, transparent steps that respect your time and budget.</p>
-        <ul class="mt-6 space-y-4">
-          <li class="flex gap-4">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">1</span>
-            <div>
-              <p class="font-semibold text-slate-800">Diagnose</p>
-              <p class="text-sm text-slate-600">Virtual triage + onsite diagnostics with licensed techs.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">2</span>
-            <div>
-              <p class="font-semibold text-slate-800">Quote</p>
-              <p class="text-sm text-slate-600">Upfront packages, financing options, and clear ranges.</p>
-            </div>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-700">3</span>
-            <div>
-              <p class="font-semibold text-slate-800">Fix</p>
-              <p class="text-sm text-slate-600">Craftsmanship, clean workspace, and walkthrough sign-off.</p>
-            </div>
-          </li>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Reliable electrical work that puts safety first</h2>
+        <p class="mt-3 text-slate-600">When power is unreliable or a project needs new wiring, you deserve a calm approach and clean workmanship. We diagnose with the right tools, explain options plainly, and complete work with tidy finishes that feel good to live with.</p>
+        <ul class="mt-4 list-inside list-disc space-y-2 text-slate-700">
+          <li>Clear scope and pricing before work begins</li>
+          <li>Respect for your home and schedule</li>
+          <li>Workmanship warranty in writing</li>
         </ul>
       </div>
-      <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
-             alt="Technician reviewing a project plan with a homeowner"
-             class="h-64 w-full rounded-2xl object-cover" />
-        <div class="mt-5 space-y-3 text-sm text-slate-600">
-          <p><span class="font-semibold text-slate-800">Trust ribbon:</span> HIC #000000 • Insured • Financing • Family owned</p>
-          <p><span class="font-semibold text-slate-800">City smart content:</span> Serving York Haven and nearby. Next appointment: Tomorrow 8 AM.</p>
-          <p><span class="font-semibold text-slate-800">Exit micro-CTA:</span> Text us a photo of the issue for instant triage.</p>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2">
+        <div class="svc-card">
+          <h3 class="svc-title">Panel upgrades and service improvements</h3>
+          <p class="svc-body">We replace aging panels, correct labeling, improve grounding and bonding, and add whole-home surge protection where it makes sense. If the home needs a service upgrade, we coordinate with the utility and handle permits. You receive a clearly labeled directory and photos for your records.</p>
+          <button type="button" class="svc-cta" data-service="Panel upgrade">Request panel estimate</button>
+        </div>
+        <div class="svc-card">
+          <h3 class="svc-title">Outlets, switches, and device repairs</h3>
+          <p class="svc-body">Loose devices, worn receptacles, and intermittent connections are more than a nuisance. We replace devices with quality parts, correct poor terminations, and add GFCI or AFCI protection where it improves safety.</p>
+          <button type="button" class="svc-cta" data-service="Electrical repair">Fix my devices</button>
+        </div>
+        <div class="svc-card">
+          <h3 class="svc-title">Lighting and fans</h3>
+          <p class="svc-body">Lighting transforms a room. We install low glare recessed fixtures, level pendants, and quiet fans with proper bracing. We set color temperature that complements your finishes and add smart dimmers so scenes are one tap away.</p>
+          <button type="button" class="svc-cta" data-service="Lighting install">Plan my lighting</button>
+        </div>
+        <div class="svc-card">
+          <h3 class="svc-title">EV charging stations</h3>
+          <p class="svc-body">We verify service capacity, route a clean circuit, and mount the charger at a comfortable height. We add a disconnect when required and label clearly. We test with your vehicle and help set charging schedules.</p>
+          <button type="button" class="svc-cta" data-service="EV charger">Price my charger</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="border-b border-slate-200 bg-warm-25">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="flex flex-col items-center text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">REVIEWS</p>
-      <h2 class="mt-3 text-3xl font-bold text-slate-900">What neighbors are saying</h2>
+<section id="plumbing-services" class="bg-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-3">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Fast fixes for small problems that cause big headaches</h2>
+        <p class="mt-3 text-slate-600">Water finds weak points. A small leak can damage finishes and cabinets quickly. We respond fast, bring the right parts, and test before we leave so you can relax.</p>
+        <div class="mt-5 rounded-lg border border-slate-200 bg-white p-4 shadow-e1">
+          <p class="text-sm font-medium">Is the water off?</p>
+          <div class="mt-3 flex gap-2">
+            <button type="button" class="btn-chip" data-water="yes">Yes</button>
+            <button type="button" class="btn-chip" data-water="no">No</button>
+          </div>
+          <p id="water-help" class="mt-3 text-xs text-slate-600"></p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2">
+        <div class="svc-card">
+          <h3 class="svc-title">Leak repair</h3>
+          <p class="svc-body">We locate the source, replace the failed part, and wipe the area clean. If we see aging parts nearby, we show you and explain options to avoid repeat visits.</p>
+          <button type="button" class="svc-cta" data-service="Plumbing repair">Stop my leak</button>
+        </div>
+        <div class="svc-card">
+          <h3 class="svc-title">Fixture replacement</h3>
+          <p class="svc-body">A new faucet or shower trim brightens a room. We ensure a proper fit, align handles so movement feels smooth, and caulk with neat, even lines.</p>
+          <button type="button" class="svc-cta" data-service="Plumbing repair">Replace my fixture</button>
+        </div>
+        <div class="svc-card">
+          <h3 class="svc-title">Water heater replacement</h3>
+          <p class="svc-body">We help you choose the right capacity, set safe temperatures, and ensure proper venting or electrical connections. We haul away the old unit and leave clear care instructions.</p>
+          <button type="button" class="svc-cta" data-service="Plumbing repair">Restore hot water</button>
+        </div>
+      </div>
     </div>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">Danielle R. • York</p>
-        <p class="mt-3 text-sm text-slate-600">“They squeezed us in same-day when our panel tripped. Clear pricing and spotless work.”</p>
-        <p class="mt-4 text-xs text-slate-500">Owner reply: “Glad we could restore power fast, Danielle!”</p>
+  </div>
+</section>
+
+<section id="bath-remodel" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Clean, functional remodeling that respects your routine</h2>
+      <p class="mt-3 text-slate-600">Even a small refresh has many steps. We sequence work to minimize downtime, protect adjacent rooms, and keep the space tidy at the end of each day.</p>
+    </div>
+    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <article class="rem-card">
+        <img src="https://images.unsplash.com/photo-1616596870504-0e9c7a9d2c8d?q=80&w=1200&auto=format&fit=crop" alt="Tub to shower conversion with glass door and niche" class="rem-img" />
+        <div class="p-5">
+          <h3 class="svc-title">Tub to shower conversion</h3>
+          <p class="mt-2 text-sm text-slate-600">We remove the tub carefully, prepare the substrate, install a sturdy base or tiled receptor, and set a valve that fits your water conditions. Niches are placed at useful heights and sloped to drain. The door closes smoothly and the caulk lines are even.</p>
+          <button type="button" class="svc-cta" data-service="Shower remodel">Request shower estimate</button>
+        </div>
       </article>
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">Marcus T. • Harrisburg</p>
-        <p class="mt-3 text-sm text-slate-600">“Water heater swap was seamless. Loved the text updates and financing options.”</p>
-        <p class="mt-4 text-xs text-slate-500">Owner reply: “Enjoy that hot water, Marcus. Thanks for trusting us!”</p>
+      <article class="rem-card">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200&auto=format&fit=crop" alt="Custom shower with rainfall head and hand shower" class="rem-img" />
+        <div class="p-5">
+          <h3 class="svc-title">Custom shower upgrades</h3>
+          <p class="mt-2 text-sm text-slate-600">Rainfall heads, hand showers, quiet fans, and warm lighting create a calm space without changing the footprint. We recommend finishes that are easy to keep clean and hardware that feels solid every day.</p>
+          <button type="button" class="svc-cta" data-service="Shower remodel">Plan my upgrade</button>
+        </div>
       </article>
-      <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-e1">
-        <p class="text-sm font-semibold text-slate-700">Lena S. • Camp Hill</p>
-        <p class="mt-3 text-sm text-slate-600">“Bathroom refresh looks incredible. Smart lighting scenes are a game changer.”</p>
-        <p class="mt-4 text-xs text-slate-500">Owner reply: “Thank you, Lena! Loved delivering the warm spa vibe.”</p>
+      <article class="rem-card">
+        <img src="https://images.unsplash.com/photo-1567016547091-4f3f0b1f2f3c?q=80&w=1200&auto=format&fit=crop" alt="Small bathroom refresh with new vanity and lighting" class="rem-img" />
+        <div class="p-5">
+          <h3 class="svc-title">Small bath refresh</h3>
+          <p class="mt-2 text-sm text-slate-600">A bright vanity, a quiet timer fan, and correct lighting make an older bath feel new. We align mirrors, lights, and switches so the room looks intentional and easy to use.</p>
+          <button type="button" class="svc-cta" data-service="Shower remodel">Price my refresh</button>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="serviceAreas" class="border-b border-slate-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+<section id="smart-home" class="bg-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">SERVICE AREAS</p>
-        <h2 class="mt-3 text-3xl font-bold text-slate-900">Serving Central PA every day</h2>
-        <p class="mt-4 text-sm text-slate-600">Local techs who know the neighborhoods, codes, and permit offices.</p>
-        <ul class="mt-6 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">York Haven</li>
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Harrisburg</li>
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Mechanicsburg</li>
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Camp Hill</li>
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">York</li>
-          <li class="rounded-2xl border border-slate-200 bg-warm-25 px-4 py-3">Middletown</li>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Make your home respond the way you live</h2>
+        <p class="mt-3 text-slate-600">Smart should feel simple. We set up controls that anyone can use without instruction. Thermostats, dimmers, and surge protection work best when planned together, which is why we offer bundle pricing that saves time and money.</p>
+        <ul class="mt-4 list-inside list-disc space-y-2 text-slate-700">
+          <li>Smart thermostats with clean backplates and correct wiring</li>
+          <li>Scene lighting with labeled dimmers that guests can still use</li>
+          <li>Whole home surge protection matched to your panel</li>
+          <li>Wi-Fi coverage that supports streaming and smart devices</li>
         </ul>
       </div>
-      <div class="rounded-3xl border border-slate-200 bg-warm-25 p-6 shadow-e1">
-        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80"
-             alt="Map marker on Central Pennsylvania"
-             class="h-72 w-full rounded-2xl object-cover" />
-        <p class="mt-4 text-xs text-slate-500">Auto-detects your city to show the closest appointment window.</p>
+      <div>
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-e1">
+          <h3 class="font-semibold">Bundle selector</h3>
+          <p class="text-sm text-slate-600">Pick what you need and see an estimated bundle savings. Final pricing depends on layout and parts.</p>
+          <div class="mt-4 space-y-3 text-sm">
+            <label class="flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-3">
+              <span>Smart thermostat</span>
+              <input type="checkbox" class="bundle" data-price="350">
+            </label>
+            <label class="flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-3">
+              <span>Smart dimmers (room set)</span>
+              <input type="checkbox" class="bundle" data-price="280">
+            </label>
+            <label class="flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-3">
+              <span>Whole home surge protector</span>
+              <input type="checkbox" class="bundle" data-price="220">
+            </label>
+            <label class="flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-3">
+              <span>Wi-Fi access point placement</span>
+              <input type="checkbox" class="bundle" data-price="180">
+            </label>
+          </div>
+          <div class="mt-4 rounded-lg border border-slate-200 bg-warm-50 p-3">
+            <p class="text-sm">Estimated total: <strong id="bundle-total">$0</strong></p>
+            <p class="text-xs text-slate-600">Bundle savings applied automatically when two or more items are selected.</p>
+          </div>
+          <div class="mt-4">
+            <button type="button" class="svc-cta w-full" data-service="Lighting install">Book smart setup</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-brand-600 text-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
-    <div>
-      <h2 class="text-2xl font-bold">Ready when you are.</h2>
-      <p class="mt-2 text-sm text-brand-100">Book urgent repairs, request a project quote, or text us a photo of the issue.</p>
+<section id="projects" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Featured projects</h2>
+      <p class="mt-3 text-slate-600">Real work proves quality. These quick stories include city names for context, clear outcomes, and photos that show neat finishes you can live with every day.</p>
     </div>
-    <div class="flex flex-wrap justify-center gap-3">
-      <a href="{{ url_for('main.book') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-700 shadow-e1">Book Now</a>
-      <a href="{{ url_for('main.quote') }}" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/40">Get a Quote</a>
-      <a href="sms:+17170000000" class="inline-flex items-center gap-2 rounded-full border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700/40">Text a Photo</a>
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <article class="proj-card">
+        <div class="ba-container" data-before="https://images.unsplash.com/photo-1512392257942-1299b1a54185?q=80&w=1200&auto=format&fit=crop" data-after="https://images.unsplash.com/photo-1598387993441-53f3a25f1f4a?q=80&w=1200&auto=format&fit=crop" aria-label="Before and after panel upgrade"></div>
+        <div class="p-5">
+          <h3 class="svc-title">York Haven panel upgrade with surge protection</h3>
+          <p class="mt-2 text-sm text-slate-600">An older panel had mismatched breakers and no free spaces. We installed a larger panel, corrected labeling, improved grounding, and added a whole home surge protector. The result is a safer, neater system with room for future projects.</p>
+          <div class="mt-3 flex items-center gap-3">
+            <button type="button" class="copy-link btn-link" data-anchor="project-york-haven">Copy link</button>
+            <a href="#service-areas" class="btn-link">See nearby cities</a>
+          </div>
+        </div>
+      </article>
+      <article class="proj-card">
+        <div class="ba-container" data-before="https://images.unsplash.com/photo-1523419409543-a6c3c43d4381?q=80&w=1200&auto=format&fit=crop" data-after="https://images.unsplash.com/photo-1560448075-bb4caa6c8d0e?q=80&w=1200&auto=format&fit=crop" aria-label="Before and after kitchen lighting"></div>
+        <div class="p-5">
+          <h3 class="svc-title">Harrisburg kitchen lighting and smart dimmers</h3>
+          <p class="mt-2 text-sm text-slate-600">We added low glare recessed lighting, pendants over the island, and a smart dimmer scene that brightens for prep and softens for dinner. The kitchen is easier to cook in and the space photographs beautifully.</p>
+          <div class="mt-3 flex items-center gap-3">
+            <button type="button" class="copy-link btn-link" data-anchor="project-harrisburg-kitchen">Copy link</button>
+            <button type="button" class="svc-cta" data-service="Lighting install">Plan lighting</button>
+          </div>
+        </div>
+      </article>
+      <article class="proj-card">
+        <div class="ba-container" data-before="https://images.unsplash.com/photo-1523419456902-79dd04b2bde3?q=80&w=1200&auto=format&fit=crop" data-after="https://images.unsplash.com/photo-1600566753151-384129cf4e8b?q=80&w=1200&auto=format&fit=crop" aria-label="Before and after shower conversion"></div>
+        <div class="p-5">
+          <h3 class="svc-title">Mechanicsburg tub to shower conversion</h3>
+          <p class="mt-2 text-sm text-slate-600">We converted an awkward tub to a walk in shower with a sturdy base, new valve, hand shower, and a niche placed at a comfortable height. Quiet ventilation keeps humidity controlled and finishes easy to maintain.</p>
+          <div class="mt-3 flex items-center gap-3">
+            <button type="button" class="copy-link btn-link" data-anchor="project-mechanicsburg-shower">Copy link</button>
+            <button type="button" class="svc-cta" data-service="Shower remodel">Request shower estimate</button>
+          </div>
+        </div>
+      </article>
+      <article class="proj-card">
+        <div class="ba-container" data-before="https://images.unsplash.com/photo-1562514948-95b70f0a7722?q=80&w=1200&auto=format&fit=crop" data-after="https://images.unsplash.com/photo-1600527604928-0029b2e1a5d6?q=80&w=1200&auto=format&fit=crop" aria-label="Before and after EV charger"></div>
+        <div class="p-5">
+          <h3 class="svc-title">Dover EV charger with dedicated circuit</h3>
+          <p class="mt-2 text-sm text-slate-600">We verified service capacity, ran a clean conduit path, installed a dedicated breaker, and mounted the charger at an ergonomic height. We labeled the disconnect and tested charging schedules with the homeowner.</p>
+          <div class="mt-3 flex items-center gap-3">
+            <button type="button" class="copy-link btn-link" data-anchor="project-dover-ev">Copy link</button>
+            <button type="button" class="svc-cta" data-service="EV charger">Price my charger</button>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
+<section id="reviews-section" class="bg-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Local homeowners describe their experience</h2>
+        <p class="mt-2 text-slate-600">We invite every customer to share honest feedback. Read a few highlights below and check our profile for more once it is live.</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button type="button" class="filter-chip active" data-filter="all">All</button>
+        <button type="button" class="filter-chip" data-filter="electrical">Electrical</button>
+        <button type="button" class="filter-chip" data-filter="lighting">Lighting</button>
+        <button type="button" class="filter-chip" data-filter="remodel">Remodel</button>
+      </div>
+    </div>
+    <div id="reviews-list" class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <article class="rev-card" data-tags="electrical">
+        <p class="rev-body">Clear explanation, neat panel work, and everything labeled so I know what is what. The crew wore covers and vacuumed before leaving. Our power is stable and the labeling makes life easier.</p>
+        <p class="rev-meta">— York Haven homeowner</p>
+        <p class="rev-owner">Owner reply: Thank you for trusting us with the panel upgrade. We are glad the new layout makes things clearer.</p>
+      </article>
+      <article class="rev-card" data-tags="lighting">
+        <p class="rev-body">We texted a photo of a sparking switch and had help the same day. The replacement looks better and feels solid. We also added dimmers and the rooms feel calmer at night.</p>
+        <p class="rev-meta">— Harrisburg homeowner</p>
+        <p class="rev-owner">Owner reply: Thanks for sharing the photo, that sped up triage and helped us arrive prepared.</p>
+      </article>
+      <article class="rev-card" data-tags="remodel">
+        <p class="rev-body">Our tub to shower conversion finished on time and the attention to detail was obvious. The niche lines up with the grout and the door closes perfectly. Cleanup was spotless each day.</p>
+        <p class="rev-meta">— Mechanicsburg homeowner</p>
+        <p class="rev-owner">Owner reply: Happy the daily cleanup helped the project feel easy to live through.</p>
+      </article>
+      <article class="rev-card" data-tags="electrical">
+        <p class="rev-body">We had outlets that felt loose and a breaker that tripped randomly. Everything is solid now and we learned how to avoid overloading a circuit. Appreciate the patient walkthrough.</p>
+        <p class="rev-meta">— York homeowner</p>
+        <p class="rev-owner">Owner reply: Education is part of every service call. Thank you for the review.</p>
+      </article>
+    </div>
+    <div class="mt-6 text-center">
+      <button type="button" class="svc-cta" data-service="Electrical repair">Schedule service</button>
+    </div>
+  </div>
+</section>
+
+<section id="service-areas" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Serving York Haven and Central Pennsylvania</h2>
+      <p class="mt-3 text-slate-600">We operate as a service area business and plan routes that keep arrival windows accurate. If your city is not listed, text your ZIP and we will confirm availability.</p>
+    </div>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
+      <button type="button" class="city-chip active" data-city="York Haven">York Haven</button>
+      <button type="button" class="city-chip" data-city="York">York</button>
+      <button type="button" class="city-chip" data-city="Harrisburg">Harrisburg</button>
+      <button type="button" class="city-chip" data-city="Mechanicsburg">Mechanicsburg</button>
+      <button type="button" class="city-chip" data-city="Middletown">Middletown</button>
+      <button type="button" class="city-chip" data-city="Manchester">Manchester</button>
+      <button type="button" class="city-chip" data-city="Dover">Dover</button>
+      <button type="button" class="city-chip" data-city="New Cumberland">New Cumberland</button>
+      <button type="button" class="city-chip" data-city="Camp Hill">Camp Hill</button>
+    </div>
+    <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div class="area-card" data-city="York Haven">
+        <h3 class="font-semibold">York Haven</h3>
+        <p class="mt-1 text-sm text-slate-600">Urgent electrical repairs, outlet or switch replacements, and small plumbing fixes are common here. Many long-term client relationships start in this neighborhood.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Today 3 to 5, Wed 9 to 12, Fri 1 to 4</span></p>
+      </div>
+      <div class="area-card" data-city="York">
+        <h3 class="font-semibold">York</h3>
+        <p class="mt-1 text-sm text-slate-600">A mix of older and newer homes means panel work, safety upgrades, and lighting redesigns. We handle permits when required and keep schedules clear.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Thu 10 to 1, Fri 2 to 5, Mon 9 to 12</span></p>
+      </div>
+      <div class="area-card" data-city="Harrisburg">
+        <h3 class="font-semibold">Harrisburg</h3>
+        <p class="mt-1 text-sm text-slate-600">Kitchen lighting, dedicated circuits, and bath improvements are common. We plan around traffic and parking to arrive inside the promised window.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Wed 1 to 4, Fri 9 to 12, Mon 12 to 3</span></p>
+      </div>
+      <div class="area-card" data-city="Mechanicsburg">
+        <h3 class="font-semibold">Mechanicsburg</h3>
+        <p class="mt-1 text-sm text-slate-600">Quiet fans, clean recessed lighting, and smart dimmers that simplify routines. Shower conversions and small bath refreshes are popular upgrades.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Tue 2 to 5, Thu 9 to 12, Mon 1 to 4</span></p>
+      </div>
+      <div class="area-card" data-city="Middletown">
+        <h3 class="font-semibold">Middletown</h3>
+        <p class="mt-1 text-sm text-slate-600">Strategic upgrades help homes feel current. Outlet or switch refreshes and better lighting create instant comfort.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Thu 1 to 4, Fri 9 to 12, Tue 10 to 1</span></p>
+      </div>
+      <div class="area-card" data-city="Manchester">
+        <h3 class="font-semibold">Manchester</h3>
+        <p class="mt-1 text-sm text-slate-600">We schedule routes efficiently to keep arrival times predictable. Tell us your timeline and we will align whenever possible.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Fri 12 to 3, Mon 9 to 12, Wed 2 to 5</span></p>
+      </div>
+      <div class="area-card" data-city="Dover">
+        <h3 class="font-semibold">Dover</h3>
+        <p class="mt-1 text-sm text-slate-600">EV charger installs and panel work are common. We verify load and offer neat mounting solutions that are easy to use.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Tue 9 to 12, Thu 2 to 5, Mon 10 to 1</span></p>
+      </div>
+      <div class="area-card" data-city="New Cumberland">
+        <h3 class="font-semibold">New Cumberland</h3>
+        <p class="mt-1 text-sm text-slate-600">Device refreshes, lighting, and small bath improvements. We protect floors and leave rooms tidy every day.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Wed 9 to 12, Fri 1 to 4, Tue 11 to 2</span></p>
+      </div>
+      <div class="area-card" data-city="Camp Hill">
+        <h3 class="font-semibold">Camp Hill</h3>
+        <p class="mt-1 text-sm text-slate-600">Families appreciate quiet work and consistent communication. We plan jobs to minimize disruption and keep your schedule intact.</p>
+        <p class="mt-2 text-xs text-slate-500">Next openings: <span class="openings">Thu 11 to 2, Mon 2 to 5, Wed 10 to 1</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="bg-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">A simple process that respects your time</h2>
+        <p class="mt-3 text-slate-600">We listen first, then test with the right tools. You see what we see, you approve the plan, and we complete work with tidy finishes that feel good to use every day.</p>
+        <ol class="mt-4 list-decimal list-inside space-y-3 text-slate-700">
+          <li><strong>Diagnose.</strong> Careful testing, clear photos, and plain spoken findings.</li>
+          <li><strong>Quote.</strong> Upfront pricing and a written scope for small fixes or larger projects.</li>
+          <li><strong>Fix.</strong> Clean technique, labeled results, and thorough cleanup.</li>
+        </ol>
+        <div class="mt-6 rounded-lg border border-slate-200 bg-white p-4 shadow-e1">
+          <p class="text-sm font-medium">Availability preview</p>
+          <div class="mt-3 flex gap-2">
+            <button type="button" class="btn-chip timeline active" data-when="today">Today</button>
+            <button type="button" class="btn-chip timeline" data-when="48h">48 hours</button>
+            <button type="button" class="btn-chip timeline" data-when="week">Next week</button>
+          </div>
+          <p id="availability" class="mt-3 text-xs text-slate-600">Today: 3 to 5, backup 5 to 7 if storm schedules allow.</p>
+          <label class="mt-3 flex items-center gap-2 text-xs text-slate-700">
+            <input type="checkbox" id="waitlist" class="accent-brand-600">
+            Add me to the waitlist if an earlier window opens
+          </label>
+          <p id="waitlist-msg" class="mt-2 text-xs text-brand-700"></p>
+        </div>
+      </div>
+      <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-e1">
+        <h3 class="font-semibold">Workmanship warranty and clean-home promise</h3>
+        <p class="mt-2 text-sm text-slate-600">Our workmanship warranty covers issues that arise from how we installed or assembled components. If a product itself fails, the manufacturer warranty applies and we help you navigate it. Shoe covers, floor protection, and vacuums come inside with us. We leave spaces ready to use, not covered in dust.</p>
+        <ul class="mt-4 list-inside list-disc space-y-2 text-slate-700">
+          <li>Written warranty on workmanship</li>
+          <li>Manufacturer support when parts fail</li>
+          <li>Clear communication and daily cleanup on multi day jobs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="border-y border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Frequently asked questions</h2>
+      <p class="mt-3 text-slate-600">Clear answers help you plan with confidence. Copy a link to any answer and share it with a family member or neighbor.</p>
+    </div>
+    <div class="mt-8 space-y-3" id="faq-accordion">
+      <div class="faq-item">
+        <button type="button" class="faq-btn">Do you serve my town</button>
+        <div class="faq-panel">
+          <p>We serve York Haven and nearby Central Pennsylvania communities including York, Harrisburg, Mechanicsburg, Middletown, Manchester, Dover, New Cumberland, and Camp Hill. If your address is not listed, text us your ZIP and a short note. We will confirm availability and a realistic timeline.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">What is your Pennsylvania contractor registration</button>
+        <div class="faq-panel">
+          <p>We are registered under the Pennsylvania Home Improvement Consumer Protection Act. You will find our HIC number in the footer, on estimates, and on invoices. You can request a verification link before any work begins. Publishing the number makes it simple to confirm status and gives you confidence in who is coming to your home.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">Do I need a permit for an electrical panel upgrade</button>
+        <div class="faq-panel">
+          <p>Most panel upgrades require a permit and an inspection by the local authority. We include permitting when required and build the schedule to account for that step. On the day of work we coordinate power downtime and confirm restoration and labeling before we leave.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">How fast can you install an EV charger</button>
+        <div class="faq-panel">
+          <p>If your panel has capacity and space, many installs take a single visit after parts are ready. If service needs an upgrade first, we plan that step and return for the charger. We mount the unit at a comfortable height, label the disconnect if required, and help set charging schedules.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">Do you handle small repairs or only big projects</button>
+        <div class="faq-panel">
+          <p>Both. We treat small repairs seriously because they affect daily life, and we are comfortable with larger projects that require planning. We will tell you which path your situation needs and why.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">What payment methods do you accept</button>
+        <div class="faq-panel">
+          <p>We accept major credit cards and common digital wallets. For larger projects we use milestone billing tied to progress. Your estimate will show accepted methods and the payment plan that applies.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">Are you insured</button>
+        <div class="faq-panel">
+          <p>Yes. We carry active liability insurance. If you would like documentation, we will provide proof. We plan jobs to avoid damage and work carefully to protect your home.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-btn">Can I text you a photo</button>
+        <div class="faq-panel">
+          <p>Yes. Photos and a short description help us triage faster and arrive with the right parts. If a photo suggests a safety risk, we will tell you what to do immediately and set the first available window.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <button type="button" class="svc-cta" data-service="Electrical repair">Schedule service</button>
+    </div>
+  </div>
+</section>
+
+<section id="final-cta" class="bg-gradient-to-b from-white to-warm-50">
+  <div class="mx-auto max-w-7xl px-4 py-14 text-center sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Ready to make your home work the way it should</h2>
+    <p class="mt-3 text-slate-600">We reply with a real window, arrive on time, and leave your home tidy. If you want a second opinion or need options explained, ask. Clear answers are part of the job.</p>
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+      <button type="button" class="inline-flex items-center gap-2 rounded-md bg-brand-600 px-6 py-3 text-white font-semibold shadow-e2 hover:bg-brand-700 svc-cta" data-service="Electrical repair">
+        Schedule Service
+      </button>
+      <a href="sms:+17170000000?body=Hi%20My%20Smarter%20Home%2C%20I%27d%20like%20to%20send%20a%20photo%20of%20an%20issue." class="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold shadow-e1 hover:bg-slate-50">
+        Text Us a Photo
+      </a>
+      <button type="button" class="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold shadow-e1 hover:bg-slate-50 svc-cta" data-service="Shower remodel">
+        Request an Estimate
+      </button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function openBookingWith(service) {
+    const select = document.getElementById('svc');
+    if (select) {
+      [...select.options].forEach(option => {
+        if (option.text.toLowerCase().includes((service || '').toLowerCase())) {
+          select.value = option.value;
+        }
+      });
+    }
+    openModal();
+  }
+
+  const modal = document.getElementById('bookingModal');
+  const openButtons = [document.getElementById('openBookingHero')];
+  const closeBooking = document.getElementById('closeBooking');
+  let lastFocus = null;
+
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('svc')?.focus(), 10);
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  }
+
+  window.handleBookingSubmit = function handleBookingSubmit() {
+    const svc = document.getElementById('svc').value;
+    const slot = (document.querySelector('input[name="slot"]:checked') || {}).value || 'Next available';
+    const name = document.getElementById('name').value.trim() || 'neighbor';
+    const city = document.getElementById('addr').value.trim() || 'your area';
+    alert(`Thanks ${name}. We will hold a ${svc} slot (${slot}) in ${city} and text you shortly.`);
+    closeModal();
+  };
+
+  openButtons.forEach(btn => btn && btn.addEventListener('click', () => openBookingWith('Electrical repair')));
+  closeBooking?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal.firstElementChild) {
+      closeModal();
+    }
+  });
+  window.addEventListener('keydown', (event) => {
+    if (!modal.classList.contains('hidden') && event.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  document.querySelectorAll('.issue-card').forEach(card => {
+    card.addEventListener('click', () => openBookingWith(card.dataset.service || 'Electrical repair'));
+  });
+  document.querySelectorAll('.svc-cta').forEach(btn => {
+    btn.addEventListener('click', () => openBookingWith(btn.dataset.service || 'Electrical repair'));
+  });
+
+  document.querySelectorAll('.btn-chip[data-water]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-chip[data-water]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const help = document.getElementById('water-help');
+      if (!help) return;
+      help.textContent = btn.dataset.water === 'no'
+        ? 'Turn the nearest shutoff clockwise, place a towel or bucket, then tap Schedule Service for the first available window.'
+        : 'Great, water is off. You can schedule the next convenient window or text us a photo of the part that failed.';
+    });
+  });
+
+  const bundleBoxes = document.querySelectorAll('.bundle');
+  const bundleTotal = document.getElementById('bundle-total');
+  function updateBundle() {
+    let sum = 0;
+    let count = 0;
+    bundleBoxes.forEach(box => {
+      if (box.checked) {
+        sum += Number(box.dataset.price || 0);
+        count += 1;
+      }
+    });
+    const discount = count >= 2 ? Math.round(sum * 0.1) : 0;
+    bundleTotal.textContent = `$${Math.max(sum - discount, 0)}`;
+  }
+  bundleBoxes.forEach(box => box.addEventListener('change', updateBundle));
+  updateBundle();
+
+  function initBA(container) {
+    const beforeUrl = container.dataset.before;
+    const afterUrl = container.dataset.after;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'relative w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-e1';
+    wrapper.style.aspectRatio = '4 / 3';
+
+    const imgAfter = document.createElement('img');
+    imgAfter.src = afterUrl;
+    imgAfter.alt = '';
+    imgAfter.className = 'absolute inset-0 h-full w-full object-cover';
+
+    const imgBefore = document.createElement('img');
+    imgBefore.src = beforeUrl;
+    imgBefore.alt = '';
+    imgBefore.className = 'absolute inset-0 h-full object-cover';
+    imgBefore.style.clipPath = 'inset(0 50% 0 0)';
+
+    const handle = document.createElement('div');
+    handle.className = 'absolute top-0 left-1/2 -translate-x-1/2 h-full w-0.5 bg-white shadow-e2';
+
+    container.innerHTML = '';
+    container.appendChild(wrapper);
+    wrapper.appendChild(imgAfter);
+    wrapper.appendChild(imgBefore);
+    wrapper.appendChild(handle);
+
+    const input = document.createElement('input');
+    input.type = 'range';
+    input.min = '0';
+    input.max = '100';
+    input.value = '50';
+    input.className = 'absolute bottom-3 left-1/2 -translate-x-1/2 w-1/2';
+    input.setAttribute('aria-label', 'Slide to compare before and after');
+    wrapper.appendChild(input);
+
+    function setSplit(pct) {
+      const right = 100 - pct;
+      imgBefore.style.clipPath = `inset(0 ${right}% 0 0)`;
+      handle.style.left = `${pct}%`;
+    }
+
+    input.addEventListener('input', () => setSplit(Number(input.value)));
+    wrapper.addEventListener('pointerdown', (event) => {
+      const rect = wrapper.getBoundingClientRect();
+      const pct = ((event.clientX - rect.left) / rect.width) * 100;
+      input.value = String(Math.max(0, Math.min(100, pct)));
+      setSplit(Number(input.value));
+    });
+
+    setSplit(50);
+  }
+  document.querySelectorAll('.ba-container').forEach(initBA);
+
+  function toast(message) {
+    const notice = document.createElement('div');
+    notice.textContent = message;
+    notice.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] rounded-md bg-slate-900 px-3 py-2 text-sm text-white shadow-e2';
+    document.body.appendChild(notice);
+    setTimeout(() => notice.remove(), 1600);
+  }
+  document.querySelectorAll('.copy-link').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const anchor = btn.dataset.anchor || '';
+      const url = `${location.origin}${location.pathname}#${anchor || 'projects'}`;
+      try {
+        await navigator.clipboard.writeText(url);
+        toast('Link copied');
+      } catch (error) {
+        toast('Copy failed, try again');
+      }
+    });
+  });
+
+  const reviewChips = document.querySelectorAll('.filter-chip');
+  const reviews = document.querySelectorAll('.rev-card');
+  reviewChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      reviewChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const tag = chip.dataset.filter;
+      reviews.forEach(review => {
+        if (tag === 'all' || review.dataset.tags.includes(tag)) {
+          review.classList.remove('hidden');
+        } else {
+          review.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  const cityChips = document.querySelectorAll('.city-chip');
+  const areaCards = document.querySelectorAll('.area-card');
+  cityChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      cityChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const city = chip.dataset.city;
+      areaCards.forEach(card => {
+        card.style.display = card.dataset.city === city ? 'block' : 'none';
+      });
+    });
+  });
+  cityChips[0]?.click();
+
+  document.querySelectorAll('.timeline').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.timeline').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const availability = document.getElementById('availability');
+      if (!availability) return;
+      if (btn.dataset.when === 'today') {
+        availability.textContent = 'Today: 3 to 5, backup 5 to 7 if storm schedules allow.';
+      }
+      if (btn.dataset.when === '48h') {
+        availability.textContent = 'Next 48 hours: Wed 9 to 12, Thu 1 to 4. We will text a 30 minute heads up.';
+      }
+      if (btn.dataset.when === 'week') {
+        availability.textContent = 'Next week: Mon 9 to 12, Tue 12 to 3, Thu 2 to 5. Pick what works best.';
+      }
+    });
+  });
+
+  document.getElementById('waitlist')?.addEventListener('change', (event) => {
+    const message = document.getElementById('waitlist-msg');
+    if (!message) return;
+    message.textContent = event.target.checked ? 'Added to waitlist, we will text if an earlier window opens.' : '';
+  });
+
+  document.querySelectorAll('.badge').forEach(badge => {
+    let tip;
+    function show() {
+      const msg = badge.dataset.tooltip;
+      if (!msg) return;
+      tip = document.createElement('div');
+      tip.role = 'tooltip';
+      tip.className = 'absolute z-50 max-w-xs rounded-md bg-slate-900 px-2 py-1 text-xs text-white shadow-e2';
+      tip.textContent = msg;
+      document.body.appendChild(tip);
+      const rect = badge.getBoundingClientRect();
+      tip.style.top = `${rect.top + window.scrollY - tip.offsetHeight - 8}px`;
+      tip.style.left = `${rect.left + window.scrollX}px`;
+    }
+    function hide() {
+      tip && tip.remove();
+    }
+    badge.addEventListener('mouseenter', show);
+    badge.addEventListener('focus', show);
+    badge.addEventListener('mouseleave', hide);
+    badge.addEventListener('blur', hide);
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-btn');
+    const panel = item.querySelector('.faq-panel');
+    panel.style.maxHeight = '0px';
+    panel.style.overflow = 'hidden';
+    panel.style.transition = 'max-height .2s ease';
+    btn.addEventListener('click', () => {
+      const open = btn.classList.contains('open');
+      document.querySelectorAll('.faq-btn.open').forEach(other => {
+        other.classList.remove('open');
+        other.nextElementSibling.style.maxHeight = '0px';
+      });
+      if (!open) {
+        btn.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
 {% endblock %}
